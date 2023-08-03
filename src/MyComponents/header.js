@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function header() {
+export default function Header() {
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
