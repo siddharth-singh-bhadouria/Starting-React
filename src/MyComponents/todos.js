@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Todos = () => {
     return (
-        <div>
+        <div className='container'>
             Todos Made!!
         </div>
     )
