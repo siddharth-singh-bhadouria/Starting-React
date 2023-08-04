@@ -1,7 +1,7 @@
 import './App.css';
-import Header from './MyComponents/header';
-import { Footer } from './MyComponents/footer';
-import { Todos } from './MyComponents/todos';
+import Header from './MyComponents/Header';
+import { Footer } from './MyComponents/Footer';
+import { Todos } from './MyComponents/Todos';
 
 function App() {
   let todos = [

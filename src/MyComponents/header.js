@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 
 export default function header(props) {
@@ -40,3 +39,8 @@ header.propTypes = {
     title: PropTypes.string,
     searchBar: PropTypes.bool.isRequired
 }
+
+// const headingStyle = {
+//     color: 'red',
+//     backgroundColor: 'black'
+// }
