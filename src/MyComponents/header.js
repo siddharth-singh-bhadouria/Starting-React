@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default function Header(props) {
+export default function header(props) {
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -31,12 +31,12 @@ export default function Header(props) {
     )
 }
 
-Header.defaultProps = {
+header.defaultProps = {
     title: 'My Todos List',
     searchBar: true
 }
 
-Header.propTypes = {
+header.propTypes = {
     title: PropTypes.string,
     searchBar: PropTypes.bool.isRequired
 }
