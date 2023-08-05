@@ -27,12 +27,13 @@ function App() {
     }
   ])
 
-  // Deleting Task ==>
 
+  // Deleting Task ==>
   const deleteTask = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id))
   }
 
+  // Set Reminder ==>
   const toggleReminder = (id) => {
     setTodos(todos.map((todo) => todo.id === id ? { ...todo, reminder: !todo.reminder } : todo))
   }
