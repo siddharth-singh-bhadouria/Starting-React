@@ -40,6 +40,8 @@ header.propTypes = {
     searchBar: PropTypes.bool.isRequired
 }
 
+
+//CSS in JS
 // const headingStyle = {
 //     color: 'red',
 //     backgroundColor: 'black'

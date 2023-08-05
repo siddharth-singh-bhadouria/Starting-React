@@ -1,10 +1,13 @@
 import './App.css';
-import Header from './MyComponents/Header';
-import { Footer } from './MyComponents/Footer';
-import { Todos } from './MyComponents/Todos';
+import { useState } from 'react'
+import Header from './MyComponents/header';
+import { Footer } from './MyComponents/footer';
+import { Todos } from './MyComponents/todos';
+// i named the original files starting with small letters so they get red underline on using capital 1st letter and i don't want to see that thats why i will keep the original 4 files named with small letters only.
+
 
 function App() {
-  let todos = [
+  const [todos, setTodos] = useState([
     {
       id: 1,
       title: 'Go to the market',
@@ -20,7 +23,7 @@ function App() {
       title: 'Go to the shop',
       desc: 'You need to go to the shop to get this job done!'
     }
-  ];
+  ])
   return (
     <>
       <Header title='My Todo List' searchBar={false} />
