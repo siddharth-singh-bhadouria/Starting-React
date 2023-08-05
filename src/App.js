@@ -10,17 +10,20 @@ function App() {
     {
       id: 1,
       title: 'Doctors Appointment',
-      desc: 'Aug 5th at 2:30pm'
+      desc: 'Aug 5th at 2:30pm',
+      reminder: true
     },
     {
       id: 2,
       title: 'Meeting a colleague',
-      desc: 'Aug 6th at 4:30pm'
+      desc: 'Aug 6th at 4:30pm',
+      reminder: true
     },
     {
       id: 3,
       title: 'Go to the market',
-      desc: 'Aug 6th at 7:00pm'
+      desc: 'Aug 6th at 7:00pm',
+      reminder: false
     }
   ])
 
@@ -30,10 +33,14 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id))
   }
 
+  const toggleReminder = (id) => {
+    setTodos(todos.map((todo) => todo.id === id ? { ...todo, reminder: !todo.reminder } : todo))
+  }
+
   return (
     <>
       <Header title='My Todo List' searchBar={false} />
-      <Todos todos={todos} onDelete={deleteTask} />
+      <Todos todos={todos} onDelete={deleteTask} onToggle={toggleReminder} />
       <Footer />
     </>
 

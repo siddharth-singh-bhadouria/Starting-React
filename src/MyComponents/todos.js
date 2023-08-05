@@ -1,7 +1,7 @@
 import TodoItem from './todoItem'
 import Button from './Button'
 
-export const Todos = ({ todos, onDelete }) => {
+export const Todos = ({ todos, onDelete, onToggle }) => {
 
     const onClick = (e) => {
         console.log('Click')
@@ -14,7 +14,7 @@ export const Todos = ({ todos, onDelete }) => {
                 <Button color='green' text='Add' onClick={onClick} /></h3>
             {todos.length > 0 ?
                 todos.map(todo => {
-                    return (<TodoItem key={todo.id} todo={todo} onDelete={onDelete} />)
+                    return (<TodoItem key={todo.id} todo={todo} onDelete={onDelete} onToggle={onToggle} />)
                 })
                 : 'No tasks to show'}
 
