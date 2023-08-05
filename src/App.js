@@ -10,17 +10,17 @@ function App() {
     {
       id: 1,
       title: 'Go to the market',
-      desc: 'You need to go to the market to get this job done!'
+      desc: 'Aug 5th at 2:30pm'
     },
     {
       id: 2,
       title: 'Go to the mall',
-      desc: 'You need to go to the mall to get this job done!'
+      desc: 'Aug 6th at 4:30pm'
     },
     {
       id: 3,
       title: 'Go to the shop',
-      desc: 'You need to go to the shop to get this job done!'
+      desc: 'Aug 6th at 7:00pm'
     }
   ])
   return (
