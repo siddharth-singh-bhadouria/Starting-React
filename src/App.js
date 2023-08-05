@@ -9,24 +9,31 @@ function App() {
   const [todos, setTodos] = useState([
     {
       id: 1,
-      title: 'Go to the market',
+      title: 'Doctors Appointment',
       desc: 'Aug 5th at 2:30pm'
     },
     {
       id: 2,
-      title: 'Go to the mall',
+      title: 'Meeting a colleague',
       desc: 'Aug 6th at 4:30pm'
     },
     {
       id: 3,
-      title: 'Go to the shop',
+      title: 'Go to the market',
       desc: 'Aug 6th at 7:00pm'
     }
   ])
+
+  // Deleting Task ==>
+
+  const deleteTask = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id))
+  }
+
   return (
     <>
       <Header title='My Todo List' searchBar={false} />
-      <Todos todos={todos} />
+      <Todos todos={todos} onDelete={deleteTask} />
       <Footer />
     </>
 

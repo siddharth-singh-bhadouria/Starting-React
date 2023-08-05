@@ -1,9 +1,9 @@
-export default function TodoItem(props) {
+export default function TodoItem({ todo, onDelete }) {
     return (
         <div className="todo">
-            <h4>{props.todo.title}</h4>
-            <p>{props.todo.desc}</p>
-            <button className="btn btn-sm btn-danger">Delete</button>
+            <h4>{todo.title}</h4>
+            <p>{todo.desc}</p>
+            <button className="btn btn-sm btn-danger" onClick={() => onDelete(todo.id)}>Delete</button>
         </div>
     )
 }
