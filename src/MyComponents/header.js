@@ -1,10 +1,13 @@
 import Button from './Button'
+import { useLocation } from 'react-router-dom'
 
-export default function header({ onAdd, showAdd }) {
+export default function Header({ onAdd, showAdd }) {
+    const location = useLocation()
+
     return (
         <div>
             <h3 className='text-center my-3 header'>Todos List
-                <Button color={showAdd ? 'red' : 'green'} text={showAdd ? 'Close' : 'Add'} onClick={onAdd} /></h3>
+                {location.pathname === '/' && <Button color={showAdd ? 'red' : 'green'} text={showAdd ? 'Close' : 'Add'} onClick={onAdd} />}   </h3>
         </div>
     )
 }

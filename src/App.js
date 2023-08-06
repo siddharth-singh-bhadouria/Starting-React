@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './MyComponents/Navbar';
-import Header from './MyComponents/header';
-import { Footer } from './MyComponents/footer';
+import Header from './MyComponents/Header';
+import { Footer } from './MyComponents/Footer';
 import { Todos } from './MyComponents/todos';
 import AddTask from './MyComponents/AddTask';
 import About from './MyComponents/About';
