@@ -1,7 +1,8 @@
 export const Footer = () => {
     return (
         <div>
-            Footer Made!!
+            <p>Copyright &copy; 2023</p>
+            <a href="/about">About</a>
         </div>
     )
 }

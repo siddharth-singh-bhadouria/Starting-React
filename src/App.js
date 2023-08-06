@@ -60,10 +60,10 @@ function App() {
         {todos.length > 0 ?
           (<Todos todos={todos} onToggle={toggleReminder} onDelete={deleteTask} />) : 'No tasks to show'
         }
+        <p className='text-center my-5 mb-auto'>< Footer /></p>
       </div>
-      < Footer />
     </>
-  );
+  )
 }
 
 export default App;
