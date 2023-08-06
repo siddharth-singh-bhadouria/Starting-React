@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './MyComponents/Navbar';
 import Header from './MyComponents/header';
 import { Footer } from './MyComponents/footer';
 import { Todos } from './MyComponents/todos';
 import AddTask from './MyComponents/AddTask';
+import About from './MyComponents/About';
 
 // i named the original files starting with small letters so they get red underline on using capital 1st letter and i don't want to see that thats why i will keep the original 4 files named with small letters only.
 
@@ -52,7 +54,7 @@ function App() {
   }
 
   return (
-    <>
+    <Router>
       <Navbar title='My Todo List' searchBar={false} />
       <div className='container'>
         <Header onAdd={() => { setShowAddTodo(!showAddTodo) }} showAdd={showAddTodo} />
@@ -60,9 +62,12 @@ function App() {
         {todos.length > 0 ?
           (<Todos todos={todos} onToggle={toggleReminder} onDelete={deleteTask} />) : 'No tasks to show'
         }
+        <Routes>
+          <Route path='/about' Component={About} />
+        </Routes>
         <p className='text-center my-5 mb-auto'>< Footer /></p>
       </div>
-    </>
+    </Router>
   )
 }
 
