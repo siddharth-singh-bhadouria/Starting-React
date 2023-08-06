@@ -9,6 +9,7 @@ import AddTask from './MyComponents/AddTask';
 
 
 function App() {
+  const [showAddTodo, setShowAddTodo] = useState(false)
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -54,8 +55,8 @@ function App() {
     <>
       <Navbar title='My Todo List' searchBar={false} />
       <div className='container'>
-        <Header />
-        <AddTask onAdd={addTask} />
+        <Header onAdd={() => { setShowAddTodo(!showAddTodo) }} showAdd={showAddTodo} />
+        {showAddTodo && <AddTask onAdd={addTask} />}
         {todos.length > 0 ?
           (<Todos todos={todos} onToggle={toggleReminder} onDelete={deleteTask} />) : 'No tasks to show'
         }
