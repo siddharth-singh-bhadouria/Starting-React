@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import Navbar from './MyComponents/Navbar';
 import Header from './MyComponents/header';
 import { Footer } from './MyComponents/footer';
 import { Todos } from './MyComponents/todos';
+import AddTask from './MyComponents/AddTask';
 
 // i named the original files starting with small letters so they get red underline on using capital 1st letter and i don't want to see that thats why i will keep the original 4 files named with small letters only.
 
@@ -29,6 +31,14 @@ function App() {
   ])
 
 
+  //Add Task ==>
+  const addTask = (todo) => {
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newTodo = { id, ...todo }
+    setTodos([...todos, newTodo]);
+  }
+
+
 
   // Deleting Task ==>
   const deleteTask = (id) => {
@@ -42,12 +52,18 @@ function App() {
 
   return (
     <>
-      <Header title='My Todo List' searchBar={false} />
-      <Todos todos={todos} onDelete={deleteTask} onToggle={toggleReminder} />
-      <Footer />
+      <Navbar title='My Todo List' searchBar={false} />
+      <div className='container'>
+        <Header />
+        <AddTask onAdd={addTask} />
+        {todos.length > 0 ?
+          (<Todos todos={todos} onToggle={toggleReminder} onDelete={deleteTask} />) : 'No tasks to show'
+        }
+      </div>
+      < Footer />
     </>
-
   );
 }
 
 export default App;
+
