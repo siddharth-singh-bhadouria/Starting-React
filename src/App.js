@@ -58,11 +58,17 @@ function App() {
       <Navbar title='My Todo List' searchBar={false} />
       <div className='container'>
         <Header onAdd={() => { setShowAddTodo(!showAddTodo) }} showAdd={showAddTodo} />
-        {showAddTodo && <AddTask onAdd={addTask} />}
-        {todos.length > 0 ?
-          (<Todos todos={todos} onToggle={toggleReminder} onDelete={deleteTask} />) : 'No tasks to show'
-        }
+
         <Routes>
+          <Route path='/' exact Component={(props) => (
+            <>
+              {showAddTodo && <AddTask onAdd={addTask} />}
+              {
+                todos.length > 0 ?
+                  (<Todos todos={todos} onToggle={toggleReminder} onDelete={deleteTask} />) : ('No tasks to show')
+              }
+            </>
+          )} />
           <Route path='/about' Component={About} />
         </Routes>
         <p className='text-center my-5 mb-auto'>< Footer /></p>
